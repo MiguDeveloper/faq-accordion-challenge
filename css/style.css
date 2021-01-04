@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  max-width: 1440px;
+  font-size: 12px;
+  background: linear-gradient(to top, #4568dc, #b06ab3);
+  margin: 0 auto;
+  padding: 0 12em;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.container-faqs {
+  background-color: white;
+  color: #4a4b5e;
+  padding: 2em 9em 2em 3em;
+  width: 8%;
+  min-height: 500px;
+  border-radius: 0 2em 2em 0;
+  flex-grow: 1;
+  overflow: hidden;
+}
+.container-faqs-title {
+  font-size: 2.3em;
+  font-weight: 700;
+  margin: 2em 0 1em;
+}
+.container-faqs-faq {
+  border-bottom: 1px solid #e7e7e9;
+  margin-top: 1.4em;
+  padding-bottom: 1.3em;
+  overflow: hidden;
+}
+.container-faqs-faq-question {
+  font-weight: 400;
+  font-size: 1.2em;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+.container-faqs-faq-question:hover {
+  color: #f47c57;
+}
+.container-faqs-faq-question::after {
+  content: url("../images/icon-arrow-down.svg");
+  transition: all 0.35s;
+}
+.container-faqs-faq-content {
+  line-height: 1.2em;
+  font-size: 1em;
+  display: none;
+  margin: 1.2em 3em 0 0;
+  transition: all 2s;
+}
+.container-imagen {
+  flex-grow: 1;
+  width: 12%;
+  background-color: white;
+  min-height: 500px;
+  border-radius: 2em 0 0 2em;
+  background: url("../images/bg-pattern-desktop.svg") no-repeat, url("../images/illustration-woman-online-desktop.svg") no-repeat white;
+  background-position-x: -568px, -81px;
+  background-position-y: -298px, 62px;
+  position: relative;
+}
+.container-imagen .box {
+  background: url("../images/illustration-box-desktop.svg") no-repeat;
+  position: absolute;
+  left: -92px;
+  top: 194px;
+  height: 191px;
+  width: 184px;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+input:checked + .container-faqs-faq-question::after {
+  transform: rotate(180deg);
+}
+input:checked ~ .container-faqs-faq-content {
+  display: block;
+  transition: all 2s;
+}
+
+/*# sourceMappingURL=style.css.map */
